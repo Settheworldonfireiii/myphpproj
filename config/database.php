@@ -1,5 +1,19 @@
 <?php
 
+
+if ($url = env('CLEARDB_DATABASE_URL', false)) {
+    $parts = parse_url($url);
+    $host = $parts["host"];
+    $username = $parts["user"];
+    $password = $parts["pass"];
+    $database = substr($parts["path"], 1);
+} else {
+    $host = env('DB_HOST', 'localhost');
+    $username = env('DB_USERNAME', 'root');
+    $password = env('DB_PASSWORD', 'nandri');
+    $database = env('DB_DATABASE', 'mydatabase');
+}
+
 return [
 
     /*
@@ -33,24 +47,16 @@ return [
 
     'connections' => [
 
-     
-        'mysql' => [
-         
-      'driver'    => 'mysql',
-      'host'      => 'localhost',
-      'database'  => 'mydatabase',
-      'username'  => 'root',
-      'password'  => 'nandri',
-      'charset'   => 'utf8',
-      'collation' => 'utf8_unicode_ci',
-      'prefix'    => '',
-    
-       
-
-            'strict' => true,
-            'engine' => null,
+     'mysql' => [
+            'driver' => 'mysql',
+            'host' => $host,
+            'database' => $database,
+            'username' => $username,
+            'password' => $password,
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
         ],
-
         
     ],
 
