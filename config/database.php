@@ -1,5 +1,13 @@
 <?php
 
+
+
+
+
+$host = 'us-cdbr-iron-east-03.cleardb.net';
+$username = 'bb954ffee5128f';
+$password = '54bb8347';
+$database = 'heroku_1fec2915b2b442f';
 return [
 
     /*
@@ -12,6 +20,7 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
+
 
     'default' => env('DB_CONNECTION', 'sqlite'),
 
@@ -33,24 +42,16 @@ return [
 
     'connections' => [
 
-     
-        'mysql' => [
-         
-      'driver'    => 'mysql',
-      'host'      => 'us-cdbr-iron-east-03.cleardb.net',
-      'database'  => 'heroku_1fec2915b2b422f',
-      'username'  => 'bb954ffee5128f',
-      'password'  => '54bb8347',
-      'charset'   => 'utf8',
-      'collation' => 'utf8_unicode_ci',
-      'prefix'    => '',
-    
-       
-
-            'strict' => true,
-            'engine' => null,
-        ],
-
+         'mysql' => array(
+        'driver'    => 'mysql',
+        'host'      => $host,
+        'database'  => $database,
+        'username'  => $username,
+        'password'  => $password,
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'prefix'    => '',
+    ),
         
     ],
 
