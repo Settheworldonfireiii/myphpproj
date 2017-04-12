@@ -37,10 +37,10 @@ return [
         'mysql' => [
          
       'driver'    => 'mysql',
-      'host'      => 'localhost',
-      'database'  => 'mydatabase',
-      'username'  => 'root',
-      'password'  => 'nandri',
+      'host'      => 'us-cdbr-iron-east-03.cleardb.net',
+      'database'  => 'heroku_1fec2915b2b422f',
+      'username'  => 'bb954ffee5128f',
+      'password'  => '54bb8347',
       'charset'   => 'utf8',
       'collation' => 'utf8_unicode_ci',
       'prefix'    => '',
